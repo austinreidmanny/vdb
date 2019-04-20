@@ -97,8 +97,25 @@ if [[ -z ${E_VALUE} ]]; then
     E_VALUE="1e-9"
 fi
 
-# Set up number of cores to use (use all available)
-NUM_THREADS=`nproc`
+
+################################################################################
+# Set up number of CPUs to use (use all available)
+################################################################################
+
+# Use `nproc` if installed (Linux or MacOS with gnu-core-utils); otherwise use `systctl`
+{ \
+    command -v nproc > /dev/null && \
+    NUM_THREADS=`nproc` && \
+    echo "Number of processors available (according to nproc): ${NUM_THREADS}"; \
+} || \
+{ \
+    command -v sysctl > /dev/null && \
+    NUM_THREADS=`sysctl -n hw.ncpu` && \
+    echo "Number of processors available (according to sysctl): ${NUM_THREADS}";
+}
+
+################################################################################
+
 ################################################################################
 # CREATE DIRECTORIES AND PREPARE NAMES FOR BLAST
 ################################################################################
