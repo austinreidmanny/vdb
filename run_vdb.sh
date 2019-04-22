@@ -37,7 +37,7 @@ while getopts "s:q:t:e:dn" arg; do
                   E_VALUE=${OPTARG}
                         ;;
                 d) # switch to discontiguous_megablast
-                  BLAST_TASK="dc_megablast"
+                  BLAST_TASK="dc-megablast"
                         ;;
                 n) # switch to blastn
                   BLAST_TASK="blastn"
