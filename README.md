@@ -11,7 +11,7 @@ options provided by the user on each run, without having to change any
 parameters hidden in some bash script.
 
 ## Usage
-./run_vdb.sh -s SRX00001,[SRX00002],[...] -q QUERY_INPUT.FASTA -t nucl|prot [-e #] [-d] [-n]
+`./run_vdb.sh -s SRX00001,[SRX00002],[...] -q QUERY_INPUT.FASTA -t nucl|prot [-e #] [-d] [-n]`
 
 ## Parameters & Options
 *Required*:
