@@ -13,11 +13,11 @@ usage() { echo -e "\nERROR: Missing SRA accessions and/or input query and/or que
               "$0 -s SRR10001,SRR10002,SRR... -q VIRUS_QUERY -t nucl|prot \n\n" \
               "Optional parameters: \n" \
                                    "-e (evalue, e.g. 100, 1, or 1e-99) \n" \
-                                   "-dc (sets program to discontiguous-megablast) \n" \
-                                   "-blastn (sets program to blastn) \n\n" \
+                                   "-d (sets program to discontiguous-megablast) \n" \
+                                   "-n (sets program to blastn) \n\n" \
               "Example of a complex run: \n" \
-              "./run_blast_vdb.sh -s SRX193147,SRX193148,SRX193149 -q tvv2_nt.fasta -t nucl -e 1e-3 -dc \n\n" \
-              "Exiting..." >&2; exit 1; }
+              "$0 -s SRX193147,SRX193148,SRX193149 -q tvv2_nt.fasta -t nucl -e 1e-3 -d \n\n" \
+              "Exiting program. Please retry with corrected parameters..." >&2; exit 1; }
 
 # Make sure the pipeline is invoked correctly, with project and sample names
 while getopts "s:q:t:e:dn" arg; do
