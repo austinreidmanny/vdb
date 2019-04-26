@@ -160,7 +160,7 @@ ${BLAST_TYPE} \
 -out ${SAMPLES}/blastn_vdb.${SAMPLES}.${BLAST_NAME_VIRUS_QUERY}.txt \
 -outfmt "6 qseqid evalue sseqid sseq" \
 -num_threads ${NUM_THREADS} \
--evalue 1e-9 \
+-evalue ${E_VALUE} \
 -max_target_seqs 100000000
 
 # Print time completed and write to log file as well
